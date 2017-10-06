@@ -135,7 +135,7 @@ feedback =
     suggestions = []
     for suggestion_key in suggestion_keys
       message = @get_message(suggestion_key)
-      suggestions.push message if message?
+      suggestions.push message if message
     feedback =
       warning: if warning_key then @get_message(warning_key) else ''
       suggestions: suggestions

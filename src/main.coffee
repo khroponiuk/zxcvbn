@@ -8,11 +8,9 @@ time = -> (new Date()).getTime()
 zxcvbn = (password, options = {}) ->
   if options instanceof Array
     user_inputs = options # backward-compatibility
-  else if typeof options === 'object'
-    { user_inputs, feedback_messages } = options
   else
-    user_inputs = []
-    feedback_messages = {}
+    user_inputs = options.user_inputs or []
+    feedback_messages = options.feedback_messages or {}
 
   start = time()
   # reset the user inputs matcher on a per-request basis to keep things stateless
