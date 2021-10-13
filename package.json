@@ -9,7 +9,7 @@
   "scripts": {
     "test": "coffeetape test/*.coffee | faucet",
     "test-saucelabs": "zuul -- test/*.coffee",
-    "build": "npm run build-lib ; npm run build-dist",
+    "build": "npm run build-lib & npm run build-dist",
     "watch": "npm run watch-lib & npm run watch-dist",
     "build-lib": "coffee -o lib --compile --bare --map src/",
     "watch-lib": "coffee -o lib --compile --bare --map --watch src/*.coffee",
